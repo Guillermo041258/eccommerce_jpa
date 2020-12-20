@@ -5,11 +5,14 @@
  */
 package com.jpa.eccomerce;
 
+import com.eccomerce.enums;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -41,6 +44,18 @@ public class Customer {
   @Temporal(TemporalType.DATE)
   @Column(name= "birthday", nullable = false)
   private Date birthday;
+  @Enumerated(EnumType.STRING)
+  @Column(name="Status", nullable=false)
+  private enums Status;
+
+    public enums getStatus() {
+        return Status;
+    }
+
+    public void setStatus(enums Status) {
+        this.Status = Status;
+    }
+  
 
     public Date getBirthday() {
         return birthday;

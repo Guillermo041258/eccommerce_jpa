@@ -5,6 +5,7 @@
  */
 package eccomerce;
 
+import com.eccomerce.enums;
 import com.jpa.eccomerce.Customer;
 import java.time.LocalDate;
 import java.time.Month;
@@ -33,12 +34,14 @@ public class Eccomerce {
       cliente.setA_materno("Jefersson");
       cliente.setNombre("Alvin");
      cliente.setBirthday(Calendar.getInstance().getTime());
+     cliente.setStatus(enums.INACTIVO);
         
       Customer cliente2 = new Customer();
        cliente2.setA_paterno("Joaquin");
       cliente2.setA_materno("Vargas");
       cliente2.setNombre("Guillermo"); 
       cliente2.setBirthday(Calendar.getInstance().getTime());
+      cliente2.setStatus(enums.ACTIVO);
       
       en.persist(cliente);
       en.persist(cliente2);
