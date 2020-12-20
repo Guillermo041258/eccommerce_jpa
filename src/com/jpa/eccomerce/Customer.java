@@ -5,6 +5,8 @@
  */
 package com.jpa.eccomerce;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +14,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -33,6 +37,19 @@ public class Customer {
   
   @Column(name="AMaterno", nullable=false, length=60)
   private String a_paterno;
+  
+  @Temporal(TemporalType.DATE)
+  @Column(name= "birthday", nullable = false)
+  private Date birthday;
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+  
 
     public Long getId() {
         return id;
